@@ -12,6 +12,7 @@ import java.util.Optional;
 public class PersonDao {
 
     private final PersonRepository personRepository;
+
     @Autowired
     public PersonDao(PersonRepository personRepository) {
         this.personRepository = personRepository;
@@ -40,10 +41,12 @@ public class PersonDao {
     }
 
     public void deletePersonUsingId(String id) {
+
         try {
             personRepository.deleteById(id);
         } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
     }
+
 }
