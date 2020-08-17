@@ -33,11 +33,11 @@ public class PersonDao {
 
     public Person updatePersonUsingId(String id, Person person) {
 
-        Optional<Person> person1 = personRepository.findById(id);
-        Person person2 = person1.get();
-        person2.setId(person.getId());
-        person2.setName(person.getName());
-        return personRepository.save(person2);
+        Optional<Person> findPersonQuery = personRepository.findById(id);
+        Person personValues = findPersonQuery.get();
+        personValues.setId(person.getId());
+        personValues.setName(person.getName());
+        return personRepository.save(personValues);
     }
 
     public void deletePersonUsingId(String id) {
