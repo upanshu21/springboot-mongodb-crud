@@ -13,7 +13,6 @@ public class PersonDao {
 
     private final PersonRepository personRepository;
 
-    @Autowired
     public PersonDao(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
