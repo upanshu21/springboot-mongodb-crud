@@ -26,12 +26,10 @@ public class PersonDao {
     }
 
     public Optional<Person> getPersonInformationById(String id) {
-
         return personRepository.findById(id);
     }
 
     public Person updatePersonUsingId(String id, Person person) {
-
         Optional<Person> findPersonQuery = personRepository.findById(id);
         Person personValues = findPersonQuery.get();
         personValues.setId(person.getId());
@@ -40,7 +38,6 @@ public class PersonDao {
     }
 
     public void deletePersonUsingId(String id) {
-
         try {
             personRepository.deleteById(id);
         } catch (NoSuchElementException e) {

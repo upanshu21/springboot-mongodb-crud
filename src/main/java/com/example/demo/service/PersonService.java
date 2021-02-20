@@ -25,17 +25,14 @@ public class PersonService {
     }
 
     public Optional<Person> getPersonInformationUsingId(String id) {
-
         return personDao.getPersonInformationById(id);
     }
 
     public void updatePersonUsingId(String id, Person person) {
-
          personDao.updatePersonUsingId(id, person);
     }
 
     public void deletePersonUsingId(String id) {
-
         personDao.deletePersonUsingId(id);
     }
 
