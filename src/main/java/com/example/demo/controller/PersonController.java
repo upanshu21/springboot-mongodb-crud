@@ -13,7 +13,6 @@ import java.util.Optional;
 public class PersonController {
 
     private final PersonService personService;
-    @Autowired
     public PersonController(PersonService personService) {
         this.personService = personService;
     }
@@ -30,13 +29,11 @@ public class PersonController {
 
     @GetMapping(path = "{id}")
     public Optional<Person> readQueryUsingId(@PathVariable("id") String id) {
-
         return personService.getPersonInformationUsingId(id);
     }
 
     @PutMapping(path = "/update/{id}")
     public void update(@PathVariable String id, @RequestBody Person person ) {
-
         personService.updatePersonUsingId(id, person);
     }
 
